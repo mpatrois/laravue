@@ -11,7 +11,23 @@
 |
 */
 use Illuminate\Foundation\Inspiring;
+use Illuminate\Http\Request;
 
-Route::get('/api/inspire', function () {
-    return Inspiring::quote();
+Route::post('/api/inspire', function (Request $request) {
+    $quotes = [];
+    for ($i=0; $i < $request->nbQuotes; $i++) { 
+        $quotes[] = Inspiring::quote();
+    }
+    return $quotes;
 });
+
+
+/* Do not remove this routes -------------------------------*/
+Route::get('/api/xsrf-cookie-token', function () {
+    return 'Request only for the xsrf-token cookie';
+});
+
+Route::get('{any}', function () {
+    return File::get(public_path() . '/app.html');
+})->where('any', '^((?!api).)*');
+/* Do not remove this routes -------------------------------*/

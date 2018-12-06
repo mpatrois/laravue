@@ -8,14 +8,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  created() {
-    fetch('/api/inspire');
-  },
-};
-</script>
-
 
 <style lang="scss">
 #app {
