@@ -2,7 +2,9 @@
 
 ## Project setup
 ```
-npm run install
+composer install
+npm install
+
 ```
 
 ### Compiles and hot-reloads for development
