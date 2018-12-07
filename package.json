@@ -7,7 +7,8 @@
     "dev": "php artisan serve --host 0.0.0.0 --port 1994 | vue-cli-service serve",
     "build": "vue-cli-service build && node postbuild.js",
     "lint": "vue-cli-service lint",
-    "inspect": "vue-cli-service inspect"
+    "inspect": "vue-cli-service inspect",
+    "postinstall": "node postinstall.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -23,6 +24,7 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0-0",
+    "fs-copy-file": "^2.1.2",
     "ncp": "^2.0.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
